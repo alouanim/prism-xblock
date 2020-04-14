@@ -7,15 +7,15 @@ from xblock.fields import Scope, String
 from xblock.fragment import Fragment
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 
-class BoxXBlock(StudioEditableXBlockMixin, XBlock):
-    display_name = String(display_name="Display name", default='Box', scope=Scope.settings)
+class PrismXBlock(StudioEditableXBlockMixin, XBlock):
+    display_name = String(display_name="Display name", default='Code', scope=Scope.settings)
     theme = String(display_name="Themes", values=('prism', 'prism-dark', 'prism-funky', 'prism-okaidia', 'prism-twilight', 'prism-coy','prism-solarizedlight','prism-tomorrow'),
         default="prism", scope=Scope.settings,
         help="Choose a Theme")	
     language = String(display_name="Code language", values=('bash', 'shell', 'shell-session', 'docker', 'docker-file', 'json','regex','yaml','yml','properties','sql','nginx','apacheconf','html','xml'),
         default="bash", scope=Scope.settings,
         help="Choose a language code")
-    boxcontent = String(display_name="Contents", multiline_editor='html', resettable_editor=False,
+    content = String(display_name="Contents", multiline_editor='html', resettable_editor=False,
         default="", scope=Scope.content,
         help="Enter content code to be displayed")
 
