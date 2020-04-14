@@ -8,7 +8,7 @@ from xblock.fragment import Fragment
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 
 class PrismXBlock(StudioEditableXBlockMixin, XBlock):
-    display_name = String(display_name="Display name", default='Code', scope=Scope.settings)	
+    display_name = String(display_name="Display name", default='Prism', scope=Scope.settings)	
     language = String(display_name="Code language", values=('bash', 'shell', 'shell-session', 'docker', 'docker-file', 'json','regex','yaml','yml','properties','sql','nginx','apacheconf','html','xml'),
         default="bash", scope=Scope.settings,
         help="Choose a language code")
