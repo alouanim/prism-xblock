@@ -8,10 +8,7 @@ from xblock.fragment import Fragment
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 
 class PrismXBlock(StudioEditableXBlockMixin, XBlock):
-    display_name = String(display_name="Display name", default='Code', scope=Scope.settings)
-    theme = String(display_name="Themes", values=('prism', 'prism-dark', 'prism-funky', 'prism-okaidia', 'prism-twilight', 'prism-coy','prism-solarizedlight','prism-tomorrow'),
-        default="prism", scope=Scope.settings,
-        help="Choose a Theme")	
+    display_name = String(display_name="Display name", default='Code', scope=Scope.settings)	
     language = String(display_name="Code language", values=('bash', 'shell', 'shell-session', 'docker', 'docker-file', 'json','regex','yaml','yml','properties','sql','nginx','apacheconf','html','xml'),
         default="bash", scope=Scope.settings,
         help="Choose a language code")
@@ -36,4 +33,4 @@ class PrismXBlock(StudioEditableXBlockMixin, XBlock):
         frag.initialize_js('Prism')
         return frag
     # Make fields editable in studio
-    editable_fields = ('display_name', 'theme', 'language', 'content', )
+    editable_fields = ('display_name', 'language', 'content')
