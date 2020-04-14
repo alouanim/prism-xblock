@@ -33,7 +33,7 @@ class BoxXBlock(StudioEditableXBlockMixin, XBlock):
         frag = Fragment(html.format(self=self))
         frag.add_css(self.resource_string("static/css/prism.css"))
         frag.add_javascript(self.resource_string("static/js/src/prism.js"))
-        frag.initialize_js('Prism)
+        frag.initialize_js('Prism')
         return frag
     # Make fields editable in studio
     editable_fields = ('display_name', 'theme', 'language', 'content', )
